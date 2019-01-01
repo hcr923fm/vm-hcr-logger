@@ -18,18 +18,15 @@ wget -q https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.g
 tar -xzf boost_1_69_0.tar.gz
 cd boost_1_69_0
 chmod +x bootstrap.sh
-./bootstrap.sh
-sudo ./b2 install
+./bootstrap.sh && sudo ./b2 install
 cd ~
 
 # RtAudio
 wget -q http://www.music.mcgill.ca/~gary/rtaudio/release/rtaudio-5.0.0.tar.gz
 tar -xzf rtaudio-5.0.0.tar.gz
-cd rtaudio-*
+cd rtaudio-5.0.0
 chmod +x configure
-./configure
-make
-sudo make install
+./configure && make && sudo make install
 cd ~
 
 # Chronicle
