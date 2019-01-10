@@ -3,7 +3,7 @@
 sudo apt-add-repository ppa:ubuntu-audio-dev/alsa-daily
 sudo apt-get update
 #sudo apt-get install -y --install-suggests build-essential dkms alsa-tools libasound2 alsa-utils
-sudo apt-get install -y build-essential dkms alsa-tools libasound2-dev libasound2 alsa-base alsa-utils git automake ncurses-dev pkg-config libsndfile-dev libmp3lame-dev
+sudo apt-get install -y build-essential dkms alsa-tools libasound2-dev libasound2 alsa-base alsa-utils git automake ncurses-dev pkg-config libsndfile-dev libmp3lame-dev unattended-upgrades
 sudo apt-get install -y linux-image-extra-`uname -r`
 sudo apt-get install -y --reinstall linux-image-extra-`uname -r`
 sudo apt-get install -y oem-audio-hda-daily-dkms
