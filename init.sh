@@ -3,13 +3,19 @@
 sudo apt-add-repository ppa:ubuntu-audio-dev/alsa-daily
 sudo apt-get update
 #sudo apt-get install -y --install-suggests build-essential dkms alsa-tools libasound2 alsa-utils
-sudo apt-get install -y build-essential dkms alsa-tools libasound2-dev libasound2 alsa-base alsa-utils git automake ncurses-dev pkg-config libsndfile-dev libmp3lame-dev unattended-upgrades
+sudo apt-get install -y build-essential dkms alsa-tools libasound2-dev libasound2 alsa-base alsa-utils git automake ncurses-dev pkg-config libsndfile-dev libmp3lame-dev unattended-upgrades ntp
 sudo apt-get install -y linux-image-extra-`uname -r`
 sudo apt-get install -y --reinstall linux-image-extra-`uname -r`
 sudo apt-get install -y oem-audio-hda-daily-dkms
 sudo apt-get autoremove -y
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
+
+# Set time and time zone
+echo "server 192.168.0.254 prefer" >> /etc/ntp.conf
+sudo /etc/init.d/ntp restart
+sudo ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
+sudo dpkg-reconfigure -f noninteractive tzdata
 
 sudo usermod -a -G audio vagrant
 
